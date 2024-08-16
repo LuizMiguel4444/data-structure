@@ -42,11 +42,11 @@ Nome_do_arquivo_final        | Nome para a criação do arquivo com os resultado
 1. Ainda no diretório /trabalho_unidade02/fontes utilize a seguinte sintaxe de comando no terminal.
 
 ```bash
-../iterate.sh execuções tamanho_inicial aumento_a_cada_iteração tamanho_final "nome_do_programa" nome_do_arquivo_final_txt
+./iterate.sh execuções tamanho_inicial aumento_a_cada_iteração tamanho_final "nome_do_programa" nome_do_arquivo_final_txt
 ```
 
 2. Exemplo:
 
 ```bash
-../iterate.sh 50 100 100 900 "./programa" resultados_programa
+./iterate.sh 50 100 100 900 "./programa" resultados_programa
 ```
