@@ -14,9 +14,9 @@ Siga os passos abaixo para executar os programas:
 
 2. Compile o código com os seguintes comandos: gcc -c -Wall arquivo.c
 
-3. Gere o executavel com o comando: gcc -o executal arquivo.o
+3. Gere o executavel com o comando: gcc -o programa arquivo.o
 
-4. Escolha um dos algorítmos, seguido pelo tamanho do vetor desejado. Por exemplo:
+4. Digite o programa compilado, seguido pelo tamanho do vetor desejado. Por exemplo:
 
 ```bash
 ./programa 1000
