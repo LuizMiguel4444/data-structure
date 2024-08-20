@@ -98,6 +98,21 @@ unsigned int hash(int value, int m) {
     return value % m < 0 ? (value % m) + m : value % m;
 }
 
+void insert_best(struct hash_table* hashTable, int value) {
+    if (loadFactor(hashTable) >= 1.0) {
+        rehash(hashTable);
+    }
+
+    int index = hashFunction(value, hashTable->size);
+    
+    // Inserir sempre no início da lista, para o melhor caso.
+    struct node* newNode = create_node(value);
+    newNode->next = hashTable->table[index];
+    hashTable->table[index] = newNode;
+
+    hashTable->n++;
+}
+
 void insert_worst(struct hash_table* hashTable, int value) {
     unsigned int key = hash(value, hashTable->size);
 
@@ -160,7 +175,7 @@ int main(int argc, char **argv) {
     
     n = atoi(argv[1]);
 
-    // caso médio
+    // melhor caso e caso médio
     struct hash_table* hashTable = createHashTable(n);
 
     // pior caso
@@ -171,6 +186,9 @@ int main(int argc, char **argv) {
     int aux;
     for (int i = 0; i < n; i++) {
         aux = (rand() % (n * 10)) + 1;
+
+        // melhor caso
+        // insert_best(hashTable, aux);
 
         // caso médio
         insert(hashTable, aux);
